@@ -20,7 +20,7 @@ def github_url(update: Update, context: CallbackContext):
 	update.message.reply_text("GitHub URL :- https://github.com/mrpriyanshu")
 
 def website_url(update: Update, context: CallbackContext):
-	update.message.reply_text("Website Link :- mrpriyanshu.github.io/")
+	update.message.reply_text("Website Link :- https://mrpriyanshu.github.io/")
 
 def unknown(update: Update, context: CallbackContext):
 	update.message.reply_text("Sorry '%s' is not a valid command" % update.message.text)
