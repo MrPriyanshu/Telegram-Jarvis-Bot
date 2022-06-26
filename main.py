@@ -8,8 +8,7 @@ from telegram.ext.filters import Filters
 updater = Updater("5154297631:AAGnyJ8FyWKyA0UYpfYuaXSEoivcYyDevS4",use_context=True)
 
 def start(update: Update, context: CallbackContext):
-	update.message.reply_text(
-		"Hello sir, Welcome to the Bot.Please write /help to see the commands available.")
+	update.message.reply_text("Hello sir, Welcome to the Bot.Please write /help to see the commands available.")
 
 def help(update: Update, context: CallbackContext):
 	update.message.reply_text("""Available Commands :-
