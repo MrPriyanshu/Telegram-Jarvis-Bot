@@ -29,6 +29,7 @@ updater.dispatcher.add_handler(CommandHandler('start', start))
 updater.dispatcher.add_handler(CommandHandler('github', github_url))
 updater.dispatcher.add_handler(CommandHandler('help', help))
 updater.dispatcher.add_handler(CommandHandler('website', website_url))
+updated.dispatcher.add_handler(MessageHandler('Android', help))
 updater.dispatcher.add_handler(MessageHandler(Filters.command, unknown))
 
 updater.start_polling()
