@@ -37,7 +37,7 @@ def qf_url(update: Update, context: CallbackContext):
 
 def shortify(update: Update, context: CallbackContext):
   get_url= urllib.request.urlopen('https://www.google.com/')
-  update.message.replay_text("Response Status: "+ str(get_url.getcode()) )
+  update.message.reply_text("Response Status: "+ str(get_url.getcode()) )
 
 def unknown(update: Update, context: CallbackContext):
 	update.message.reply_text("Sorry '%s' is not a valid command" % update.message.text)
