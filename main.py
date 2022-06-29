@@ -18,6 +18,7 @@ def help(update: Update, context: CallbackContext):
 /programmingbooks - To get the URL to programming books website 
 /quickfonts - To get the URL to QuickFonts website
 /logs - To get URL to log file
+/linkshortify - Link shortner (under development)
          more function on the way....""")
 
 def github_url(update: Update, context: CallbackContext):
