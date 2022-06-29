@@ -37,7 +37,7 @@ def qf_url(update: Update, context: CallbackContext):
 	update.message.reply_text("QuickFonts Link :- https://mrpriyanshu.github.io/QuickFonts/")
 
 def shortify(update: Update, context: CallbackContext):
-  get_url= urllib.request.urlopen('https://www.google.com/')
+  get_url= urllib.request.urlopen('https://linkshortify.com/api?api=fc200dd111632800cfe1abef39edb48b3cdb9051&url=yourdestinationlink.com')
   update.message.reply_text("Response Status: "+ str(get_url.getcode()) )
 
 def unknown(update: Update, context: CallbackContext):
