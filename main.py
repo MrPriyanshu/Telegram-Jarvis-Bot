@@ -14,9 +14,9 @@ def help(update: Update, context: CallbackContext):
 	update.message.reply_text("""Available Commands :-
 	/github - To get the github URL
 	/website - To get the website URL
-        /programmingbooks - To get the URL to programming books website 
-        /quickfonts - To get the URL to QuickFonts website
-        /logs - To get URL to log file
+/programmingbooks - To get the URL to programming books website 
+/quickfonts - To get the URL to QuickFonts website
+/logs - To get URL to log file
          more function on the way....""")
 
 def github_url(update: Update, context: CallbackContext):
