@@ -1,4 +1,4 @@
-import urllib.request
+import requests
 from telegram.ext.updater import Updater
 from telegram.update import Update
 from telegram.ext.callbackcontext import CallbackContext
@@ -37,8 +37,8 @@ def qf_url(update: Update, context: CallbackContext):
 	update.message.reply_text("QuickFonts Link :- https://mrpriyanshu.github.io/QuickFonts/")
 
 def shortify(update: Update, context: CallbackContext):
-  get_url= urllib.request.urlopen('https://linkshortify.com/api?api=fc200dd111632800cfe1abef39edb48b3cdb9051&url=yourdestinationlink.com')
-  update.message.reply_text("Response Status: "+ str(get_url.getcode()) )
+  response = requests.get('https://api.github.com')
+  update.message.reply_text(response.text)
 
 def unknown(update: Update, context: CallbackContext):
 	update.message.reply_text("Sorry '%s' is not a valid command" % update.message.text)
