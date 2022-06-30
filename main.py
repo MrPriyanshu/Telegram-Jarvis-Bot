@@ -30,7 +30,11 @@ def website_url(update: Update, context: CallbackContext):
 	update.message.reply_text("Website Link :- https://mrpriyanshu.github.io/")
 
 def log(update: Update, context: CallbackContext):
-update.message.reply_text(urlopen('https://mrpriyanshu.github.io/resources/log.txt').read())
+url = "https://mrpriyanshu.github.io/resources/log.txt"
+file = urllib.request.urlopen(url)
+for line in file:
+decoded_line = line.decode("utf-8")
+update.message.reply_text(decoded_line)
 
 def pbooks_url(update: Update, context: CallbackContext):
 	update.message.reply_text("Programming Books Link :- https://mrpriyanshu.github.io/programmingbooks/")
