@@ -18,7 +18,7 @@ def help(update: Update, context: CallbackContext):
 	/website - To get the website URL
 /programmingbooks - To get the URL to programming books website 
 /quickfonts - To get the URL to QuickFonts website
-/logs - To get URL to log file
+/logs - To get the text in  log file (not working)
 /linkshort1 - Link shortner (under development)
 /linkshort2 - Link shortner (under development)
          more function on the way....""")
@@ -29,12 +29,12 @@ def github_url(update: Update, context: CallbackContext):
 def website_url(update: Update, context: CallbackContext):
 	update.message.reply_text("Website Link :- https://mrpriyanshu.github.io/")
 
-def log(update: Update, context: CallbackContext):
-url = "https://mrpriyanshu.github.io/resources/log.txt"
-file = urllib.request.urlopen(url)
-for line in file:
-decoded_line = line.decode("utf-8")
-update.message.reply_text(decoded_line)
+#def log(update: Update, context: CallbackContext):
+#url = "https://mrpriyanshu.github.io/resources/log.txt"
+#file = urllib.request.urlopen(url)
+#for line in file:
+#decoded_line = line.decode("utf-8")
+#update.message.reply_text(decoded_line)
 
 def pbooks_url(update: Update, context: CallbackContext):
 	update.message.reply_text("Programming Books Link :- https://mrpriyanshu.github.io/programmingbooks/")
@@ -59,7 +59,7 @@ updater.dispatcher.add_handler(CommandHandler('help', help))
 updater.dispatcher.add_handler(CommandHandler('website', website_url))
 updater.dispatcher.add_handler(CommandHandler('programmingbooks', pbooks_url))
 updater.dispatcher.add_handler(CommandHandler('quickfonts', qf_url))
-updater.dispatcher.add_handler(CommandHandler('logs', log))
+#updater.dispatcher.add_handler(CommandHandler('logs', log))
 updater.dispatcher.add_handler(CommandHandler('linkshort1', short1))
 updater.dispatcher.add_handler(CommandHandler('linkshort2', short2))
 updater.dispatcher.add_handler(MessageHandler(Filters.command, unknown))
