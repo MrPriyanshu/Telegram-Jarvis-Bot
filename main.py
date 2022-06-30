@@ -18,7 +18,8 @@ def help(update: Update, context: CallbackContext):
 /programmingbooks - To get the URL to programming books website 
 /quickfonts - To get the URL to QuickFonts website
 /logs - To get URL to log file
-/linkshortify - Link shortner (under development)
+/linkshort1 - Link shortner (under development)
+/linkshort2 - Link shortner (under development)
          more function on the way....""")
 
 def github_url(update: Update, context: CallbackContext):
@@ -40,6 +41,10 @@ def shortify(update: Update, context: CallbackContext):
   response = requests.get('https://linkshortify.com/api?api=fc200dd111632800cfe1abef39edb48b3cdb9051&url=yourdestinationlink.com')
   update.message.reply_text(response.text)
 
+def shortify(update: Update, context: CallbackContext):
+  response = requests.get('https://linkbnao.com/api?api=8a9bc11b1b71ad2bbca524248dab5e4a4f56988f&url=yourdestinationlink.com')
+  update.message.reply_text(response.text)
+
 def unknown(update: Update, context: CallbackContext):
 	update.message.reply_text("Sorry '%s' is not a valid command" % update.message.text)
 
@@ -50,7 +55,8 @@ updater.dispatcher.add_handler(CommandHandler('website', website_url))
 updater.dispatcher.add_handler(CommandHandler('programmingbooks', pbooks_url))
 updater.dispatcher.add_handler(CommandHandler('quickfonts', qf_url))
 updater.dispatcher.add_handler(CommandHandler('logs', log))
-updater.dispatcher.add_handler(CommandHandler('linkshortify', shortify))
+updater.dispatcher.add_handler(CommandHandler('linkshort1', short1))
+updater.dispatcher.add_handler(CommandHandler('linkshort2', short2))
 updater.dispatcher.add_handler(MessageHandler(Filters.command, unknown))
 
 updater.start_polling()
