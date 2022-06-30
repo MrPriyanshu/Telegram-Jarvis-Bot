@@ -1,4 +1,5 @@
 import requests
+from urllib.request import urlopen
 from telegram.ext.updater import Updater
 from telegram.update import Update
 from telegram.ext.callbackcontext import CallbackContext
@@ -29,9 +30,7 @@ def website_url(update: Update, context: CallbackContext):
 	update.message.reply_text("Website Link :- https://mrpriyanshu.github.io/")
 
 def log(update: Update, context: CallbackContext):
-with open('https://mrpriyanshu.github.io/resources/log.txt') as f:
-contents = f.read()
-update.message.reply_text(contents)
+update.message.reply_text(urlopen(“https://mrpriyanshu.github.io/resources/log.txt”).read())
 
 def pbooks_url(update: Update, context: CallbackContext):
 	update.message.reply_text("Programming Books Link :- https://mrpriyanshu.github.io/programmingbooks/")
