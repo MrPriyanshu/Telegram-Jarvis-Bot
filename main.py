@@ -29,8 +29,9 @@ def website_url(update: Update, context: CallbackContext):
 	update.message.reply_text("Website Link :- https://mrpriyanshu.github.io/")
 
 def log(update: Update, context: CallbackContext):
-response = requests.get('https://mrpriyanshu.github.io/resources/log.txt')
-update.message.reply_text(response.text)
+with open('https://mrpriyanshu.github.io/resources/log.txt') as f:
+contents = f.read()
+update.message.reply_text(contents)
 
 def pbooks_url(update: Update, context: CallbackContext):
 	update.message.reply_text("Programming Books Link :- https://mrpriyanshu.github.io/programmingbooks/")
