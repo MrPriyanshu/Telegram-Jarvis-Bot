@@ -7,7 +7,7 @@ from telegram.ext.commandhandler import CommandHandler
 from telegram.ext.messagehandler import MessageHandler
 from telegram.ext.filters import Filters
 
-updater = Updater("5154297631:AAGnyJ8FyWKyA0UYpfYuaXSEoivcYyDevS4",use_context=True)
+updater = Updater("5452156786:AAE0UWUPh7lEf3SzcE1L4jOKFVh-ypCcbmw",use_context=True)
 
 def start(update: Update, context: CallbackContext):
 	update.message.reply_text("Hello sir, Welcome to the Bot.Please write /help to see the commands available.")
